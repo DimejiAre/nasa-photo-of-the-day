@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  background-color: whitesmoke;
 }
 
 .App-logo {
@@ -30,4 +32,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+header,footer {
+  background-color: cornflowerblue;
+  padding: 10px 0;
+}
+
+p {
+  padding: 0 40px;
+  margin: 5px 0;
+}
+
+.image, img {
+  max-height: 700px;
 }
