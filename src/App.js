@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
 
-  const [data, setData] = useState(null)
+  const [data, setData] = useState({})
 
   useEffect(()=>{
     axios.get('https://lambda-github-api-server.herokuapp.com/')
@@ -16,18 +16,16 @@ function App() {
     })
   },[])
 
-  console.log(data)
-
   return (
-    <div className="App App-header">
+    <div className="App">
       <Header />
       <Image 
-      title='Test title'
-      ImageUrl='Test Url'
-      explanation='No explanation'/>
+      title={data.title}
+      imageUrl={data.url}
+      explanation={data.explanation}/>
       <Footer 
-      copyright='Dimeji'
-      date='11/11/11'/>
+      copyright={data.copyright}
+      date={data.date}/>
     </div>
   );
 }
