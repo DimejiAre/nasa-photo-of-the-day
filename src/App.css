@@ -49,6 +49,6 @@ p {
   margin: 5px 0;
 }
 
-.image, img {
+img {
   max-height: 700px;
 }
