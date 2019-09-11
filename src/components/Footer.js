@@ -5,7 +5,7 @@ function Footer(props){
     return (
         <footer>
             <p>Image Credits & CopyRight: {copyright}</p>
-            <p>Date: {date}</p>
+            <p>Published: {date}</p>
         </footer>
     )
 }

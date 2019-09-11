@@ -5,7 +5,7 @@ function Image(props){
     return (
         <div className='main-content'>
             <h1>{title}</h1>
-            <img href={imageUrl} alt='Photo of the day'/>
+            <img src={imageUrl} alt='Photo of the day'/>
             <p>{explanation}</p>
         </div>
     )
