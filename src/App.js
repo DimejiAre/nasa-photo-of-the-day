@@ -4,21 +4,29 @@ import "./App.css";
 import Header from "./components/Header";
 import Image from "./components/Image";
 import Footer from "./components/Footer";
+import DatePicker from "./components/DatePicker";
+
 
 function App() {
 
-  const [data, setData] = useState({})
+  const todaysDate = new Date().toISOString().substr(0, 10);
+
+  const [data, setData] = useState({});
+  const [date, setDate] = useState(todaysDate);
 
   useEffect(()=>{
-    axios.get('https://lambda-github-api-server.herokuapp.com/')
+    axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY' + '&date=' + date)
     .then(response => {
       setData(response.data)
     })
-  },[])
+  },[date])
 
   return (
     <div className="App">
       <Header />
+      <DatePicker 
+      date={date}
+      setDate={setDate}/>
       <Image 
       title={data.title}
       imageUrl={data.url}
