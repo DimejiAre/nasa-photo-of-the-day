@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import "./App.css";
+import styled from 'styled-components';
+// import "./App.css";
 import Header from "./components/Header";
 import Image from "./components/Image";
 import Footer from "./components/Footer";
 import DatePicker from "./components/DatePicker";
 
+const StyledApp = styled.div`
+  text-align: center;
+  margin: 0 auto;
+  background-color: whitesmoke;
+`;
 
 function App() {
 
@@ -22,7 +28,7 @@ function App() {
   },[date])
 
   return (
-    <div className="App">
+    <StyledApp>
       <Header />
       <DatePicker 
       date={date}
@@ -34,7 +40,7 @@ function App() {
       <Footer 
       copyright={data.copyright}
       date={data.date}/>
-    </div>
+    </StyledApp>
   );
 }
 
